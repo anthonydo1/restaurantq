@@ -1,1 +1,1 @@
-# RestaurantQueueSystem
+# Restaurant Queue System
