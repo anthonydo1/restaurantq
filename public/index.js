@@ -10,13 +10,15 @@ window.onload = function() {
     }
 
     function MakeRequest() {
-        fetch(url, {
-            method: 'POST',
-            body: JSON.stringify({ 
-                phone: phonenumber.value,
-                people: people.value
+        if ((phonenumber.value != '') && (people.value != '')) {
+            fetch(url, {
+                method: 'POST',
+                body: JSON.stringify({ 
+                    phone: phonenumber.value,
+                    people: people.value
+                })
             })
-        })
-        .then(res => res.json());
+            .then(res => res.json());
+        }
     }
 }
