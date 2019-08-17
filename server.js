@@ -1,4 +1,5 @@
-var databaseHandler = require('./databasehandler');
+var databaseHandler = require('./database_module');
+var sendsms = require('./send_sms');
 var express = require('express');
 var bodyParser = require('body-parser')
 var app = express();

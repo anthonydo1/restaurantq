@@ -16,6 +16,7 @@ window.onload = function() {
                 phone: phonenumber.value,
                 people: people.value
             })
-        }).then(res => res.json());
+        })
+        .then(res => res.json());
     }
 }
