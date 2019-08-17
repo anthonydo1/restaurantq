@@ -1,20 +1,13 @@
-const axios = require('axios');
-const url = 'localhost:3000/'
+const url = 'localhost:3000/queue'
 
-$('document').ready(function() {
-    $('submit').click(function() {
-        if ($('phonenumber').val() != '') {
-            axios.post(url, {
-                phonenumber: $('phonenumber').val()
-            })
-        } else {
-            console.log('something went wrong');
-        }
+window.onload = function() {
+    const submit = document.getElementById('submit');
+    const phonenumber = document.getElementById('phonenumber');
+
+    submit.addEventListener('click', function() {
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(phonenumber.value)
+        }).then(res => res.json());
     })
-})
-.then((res) => {
-    console.log(`statusCode: ${res.statusCode}`)
-})
-.catch((error) => {
-    console.error(error);
-})
+}
