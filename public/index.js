@@ -52,7 +52,8 @@ function MakeRequest() {
                 people: people.value
             })
         })
-        .then(res => res.json());
+        .then(res => res.text())
+        .then(text => console.log(text));
     }
 }
 
