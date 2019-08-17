@@ -1,9 +1,10 @@
-var databaseHandler = require('./database_module');
-var sendsms = require('./send_sms');
 var express = require('express');
 var bodyParser = require('body-parser')
 var app = express();
 var http = require('http').createServer(app);
+
+var databaseHandler = require('./database_module');
+var sendsms = require('./send_sms');
 
 const PORT = process.env.PORT || 3000;
 
@@ -16,7 +17,7 @@ app.post('/queue', function(req, res) {
     var people = req.body.people;
 
     databaseHandler.data.createQueueObject(phone, people);
-    res.end("yes");
+    res.end("Queue Created");
 })
 
 

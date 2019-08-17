@@ -74,7 +74,7 @@ function createListElement(type, key, phone, people) {
 
     var h5 = document.createElement('h5');
         h5.className = "mb-1";
-        h5.innerText = "Table " + key;
+        h5.innerText = "Ticket# " + key;
 
     var small = document.createElement('small');
         if (type == "queue") {
