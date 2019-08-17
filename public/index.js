@@ -11,7 +11,7 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-const url = 'localhost:3000/queue'
+const url = 'https://restaurantqueuesystem.herokuapp.com/queue'
 
 const submit = document.getElementById('submit');
 const phonenumber = document.getElementById('phonenumber');
