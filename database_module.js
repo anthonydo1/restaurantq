@@ -4,13 +4,6 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 var firebaseConfig = {
-    apiKey: "AIzaSyDHZXXqo5s6NPeoN7Z-IcCXCDqdrHSEhpM",
-    authDomain: "resturantqueue.firebaseapp.com",
-    databaseURL: "https://resturantqueue.firebaseio.com",
-    projectId: "resturantqueue",
-    storageBucket: "resturantqueue.appspot.com",
-    messagingSenderId: "850406156828",
-    appId: "1:850406156828:web:ed224801057c0944"
   };
 
 // Initialize Firebase
