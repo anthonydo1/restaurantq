@@ -7,7 +7,7 @@ var methods = {
     sendConfirmationMessage: function(phone, key) {
         client.messages
             .create({
-                body: 'Your table number is ' + key,
+                body: 'Your table number is A1',
                 from: '+12053031299',
                 to: phone
             })
