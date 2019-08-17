@@ -30,7 +30,15 @@ firebase.database().ref('queue').on('value', (snapshot) => {
     document.getElementById('queue').innerHTML = `<h4 class="text-white" id="queueheader">Queue</h4>`;
     snapshot.forEach(function(childSnapshot) {
         var childInfo = childSnapshot.val();
-        createListElement(childSnapshot.key, childInfo.phone, childInfo.people);
+        createListElement("queue", childSnapshot.key, childInfo.phone, childInfo.people);
+    })
+})
+
+firebase.database().ref('ready').on('value', (snapshot) => {
+    document.getElementById('ready').innerHTML = `<h4 class="text-white" id="queueheader">Table Ready</h4>`;
+    snapshot.forEach(function(childSnapshot) {
+        var childInfo = childSnapshot.val();
+        createListElement("ready", childSnapshot.key, childInfo.phone, childInfo.people);
     })
 })
 
@@ -44,15 +52,45 @@ function MakeRequest() {
                 people: people.value
             })
         })
-            .then(res => res.json());
+        .then(res => res.json());
     }
 }
 
 
-function createListElement(key, phone, people) {
-    
-    var listgroup = $("<h5></h5>").text("dab");
+function createListElement(type, key, phone, people) {
+    var listgroup = document.createElement('div');
+        listgroup.className = "listgroup";
 
-    $('queue').append(listgroup);
+    var a = document.createElement('a');
+        a.href = "#";
+        a.className = "list-group-item list-group-item-action flex-column align-items-start mt-2";
+
+    var div = document.createElement('div');
+        div.className = "d-flex w-100 justify-content-between";
+
+    var h5 = document.createElement('h5');
+        h5.className = "mb-1";
+        h5.innerText = "Table " + key;
+
+    var small = document.createElement('small');
+        if (type == "queue") {
+            small.className = "text-danger";
+            small.innerText = "Not Ready";
+        } else {
+            small.className = "text-success";
+            small.innerText = "Ready";
+        }
+
+    var p = document.createElement('p');
+        p.className = "mb-1";
+        p.innerText = people + " People";
+
+    div.appendChild(h5);
+    div.appendChild(small);
+    a.appendChild(div);
+    a.appendChild(p);
+    listgroup.appendChild(a);
+    queue.appendChild(listgroup);
 }
+
 
