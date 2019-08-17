@@ -12,7 +12,7 @@ window.onload = function() {
     function MakeRequest() {
         fetch(url, {
             method: 'POST',
-            body: JSON.stringify({
+            body: JSON.stringify({ 
                 phone: phonenumber.value,
                 people: people.value
             })
