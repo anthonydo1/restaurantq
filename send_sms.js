@@ -9,7 +9,7 @@ var methods = {
             .create({
                 body: 'Your table number is A1',
                 from: '+12053031299',
-                to: phone
+                to: '+'+phone
             })
             .then(message => console.log(message.sid));
     },
@@ -19,7 +19,7 @@ var methods = {
             .create({
                 body: 'Your table is ready to be seated! Please arrive to the front desk.',
                 from: '+12053031299',
-                to: phone
+                to: '+'+phone
             })
             .then(message => console.log(message.sid));
     },

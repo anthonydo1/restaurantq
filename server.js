@@ -13,8 +13,8 @@ app.use(bodyParser.json());
 
 
 app.post('/queue', function(req, res) {
-    var phone = req.body.phone;
-    var people = req.body.people;
+    var phone = parseInt(req.body.phone);
+    var people = parseInt(req.body.people);
 
     databaseHandler.data.createQueueObject(phone, people)
     sendsms.data.sendConfirmationMessage(phone);
