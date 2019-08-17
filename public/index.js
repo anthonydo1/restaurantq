@@ -1,5 +1,11 @@
 var firebaseConfig = {
-    
+    apiKey: "AIzaSyDHZXXqo5s6NPeoN7Z-IcCXCDqdrHSEhpM",
+    authDomain: "resturantqueue.firebaseapp.com",
+    databaseURL: "https://resturantqueue.firebaseio.com",
+    projectId: "resturantqueue",
+    storageBucket: "resturantqueue.appspot.com",
+    messagingSenderId: "850406156828",
+    appId: "1:850406156828:web:ed224801057c0944"
   };
 
 // Initialize Firebase
@@ -24,7 +30,7 @@ firebase.database().ref('queue').on('value', (snapshot) => {
     document.getElementById('queue').innerHTML = `<h4 class="text-white" id="queueheader">Queue</h4>`;
     snapshot.forEach(function(childSnapshot) {
         var childInfo = childSnapshot.val();
-        createListElement("queue", childSnapshot.key, childInfo.phone, childInfo.people);
+        createListElement("queue", childInfo.table, childInfo.phone, childInfo.people);
     })
 })
 
@@ -32,7 +38,7 @@ firebase.database().ref('ready').on('value', (snapshot) => {
     document.getElementById('ready').innerHTML = `<h4 class="text-white" id="queueheader">Table Ready</h4>`;
     snapshot.forEach(function(childSnapshot) {
         var childInfo = childSnapshot.val();
-        createListElement("ready", childSnapshot.key, childInfo.phone, childInfo.people);
+        createListElement("ready", childInfo.table, childInfo.phone, childInfo.people);
     })
 })
 
@@ -55,7 +61,7 @@ function MakeRequest() {
 }
 
 
-function createListElement(type, key, phone, people) {
+function createListElement(type, table, phone, people) {
     var listgroup = document.createElement('div');
         listgroup.className = "listgroup";
 
@@ -68,7 +74,7 @@ function createListElement(type, key, phone, people) {
 
     var h5 = document.createElement('h5');
         h5.className = "mb-1";
-        h5.innerText = "Ticket# " + key;
+        h5.innerText = "Table " + table;
 
     var small = document.createElement('small');
         if (type == "queue") {

@@ -27,8 +27,10 @@ app.post('/queue', function(req, res) {
     var phone = parseInt(req.body.phone);
     var people = parseInt(req.body.people);
 
-    databaseHandler.data.createQueueObject(phone, people)
-    sendsms.data.sendConfirmationMessage(phone, generateTableNumber());
+    var tableNumber = generateTableNumber();
+
+    databaseHandler.data.createQueueObject(phone, people, tableNumber);
+    sendsms.data.sendConfirmationMessage(phone, tableNumber);
     
     res.end("Queue Created");
 })

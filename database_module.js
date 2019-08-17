@@ -4,17 +4,25 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 var firebaseConfig = {
+    apiKey: "AIzaSyDHZXXqo5s6NPeoN7Z-IcCXCDqdrHSEhpM",
+    authDomain: "resturantqueue.firebaseapp.com",
+    databaseURL: "https://resturantqueue.firebaseio.com",
+    projectId: "resturantqueue",
+    storageBucket: "resturantqueue.appspot.com",
+    messagingSenderId: "850406156828",
+    appId: "1:850406156828:web:ed224801057c0944"
   };
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
 var methods = {
-    createQueueObject: function(phone, people) {
+    createQueueObject: function(phone, people, table) {
         var db = firebase.database().ref("queue");
         db.push({
             phone: phone,
-            people: people
+            people: people,
+            table: table
         }).then(snap => {
             return snap.key;
         })
@@ -25,11 +33,12 @@ var methods = {
         db.child(key).remove();
     },
 
-    createReadyObject: function(phone, people) {
+    createReadyObject: function(phone, people, table) {
         var db = firebase.database().ref("ready");
         db.push({
             phone: phone, 
-            people: people
+            people: people,
+            table: table
         })
     },
 
