@@ -50,7 +50,10 @@ function MakeRequest() {
             body: JSON.stringify({
                 phone: phonenumber.value,
                 people: people.value
-            })
+            }),
+            headers: {
+                'Content-Type': 'application/json',
+            },
         })
         .then(res => res.text())
         .then(text => console.log(text));
