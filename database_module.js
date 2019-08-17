@@ -22,6 +22,8 @@ var methods = {
         db.push({
             phone: phone,
             people: people
+        }).then(snap => {
+            return snap.key;
         })
     },
 

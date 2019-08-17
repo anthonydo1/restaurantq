@@ -16,7 +16,9 @@ app.post('/queue', function(req, res) {
     var phone = req.body.phone;
     var people = req.body.people;
 
-    databaseHandler.data.createQueueObject(phone, people);
+    databaseHandler.data.createQueueObject(phone, people).then(key => {
+        sendsms.data.sendConfirmationMessage(phone, key);
+    })
     res.end("Queue Created");
 })
 
