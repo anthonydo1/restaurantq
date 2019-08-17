@@ -4,10 +4,10 @@ const client = require('twilio')(accountSid, authToken);
 
 var methods = {
 
-    sendConfirmationMessage: function(phone, key) {
+    sendConfirmationMessage: function(phone, table) {
         client.messages
             .create({
-                body: 'Your table number is A1',
+                body: 'Your table number is ' + table,
                 from: '+12053031299',
                 to: '+'+phone
             })
