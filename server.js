@@ -5,6 +5,7 @@ var bodyParser = require('body-parser')
 var app = express();
 var http = require('http').createServer(app);
 
+const PORT = process.env.PORT || 3000;
 
 app.use(express.static('public'));
 app.use(bodyParser.json());
@@ -19,6 +20,6 @@ app.post('/queue', function(req, res) {
 })
 
 
-http.listen(3000, function() {
+http.listen(PORT, function() {
     console.log(`Server running on port 3000`);
 })
