@@ -7,8 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Resturant Queue System</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/superhero/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="index.js"></script>
 
 </head>
 
@@ -60,7 +58,7 @@
         <div class="row mt-4" id="row2">
             <div class="col-lg-7"></div>
             <div class="col-lg-5" id="queue">
-                <h4 class="text-white">Queue</h4>
+                <h4 class="text-white" id="queueheader">Queue</h4>
 
                 <div class="listgroup">
                     <a href="#" class="list-group-item list-group-item-action flex-column align-items-start mt-2">
@@ -84,6 +82,11 @@
             </div>
         </div>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
+
+    <script src="index.js"></script>
 </body>
 
 </html>

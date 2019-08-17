@@ -15,7 +15,7 @@ app.post('/queue', function(req, res) {
     var people = req.body.people;
 
     databaseHandler.data.createQueueObject(phone, people);
-    res.end("yes");
+    res.end();
 })
 
 
