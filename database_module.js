@@ -22,7 +22,7 @@ admin.initializeApp({
 
 var methods = {
     createQueueObject: function(phone, people, table) {
-        var db = firebase.database().ref("queue");
+        var db = admin.database().ref("queue");
         db.push({
             phone: phone,
             people: people,
@@ -31,12 +31,12 @@ var methods = {
     },
 
     deleteQueueObject: function(key) {
-        var db = firebase.database().ref("items");
+        var db = admin.database().ref("items");
         db.child(key).remove();
     },
 
     createReadyObject: function(phone, people, table) {
-        var db = firebase.database().ref("ready");
+        var db = admin.database().ref("ready");
         db.push({
             phone: phone, 
             people: people,
@@ -45,7 +45,7 @@ var methods = {
     },
 
     deleteReadyObject: function(key) {
-        var db = firebase.database().ref("items");
+        var db = admin.database().ref("items");
         db.child(key).remove();
     }
 };
