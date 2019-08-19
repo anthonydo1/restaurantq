@@ -57,6 +57,8 @@ function MakeRequest() {
         })
         .then(res => res.text())
         .then(text => console.log(text));
+        phonenumber.reset();
+        people.reset();
     }
 }
 
