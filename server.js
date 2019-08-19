@@ -1,12 +1,11 @@
 var express = require('express');
 var bodyParser = require('body-parser')
-var http = require('http').createServer(app);
 
 var databaseHandler = require('./database_module');
 var sendsms = require('./send_sms');
 
 var app = express();
-
+var http = require('http').createServer(app);
 
 const PORT = process.env.PORT || 3000;
 
