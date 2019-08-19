@@ -1,5 +1,4 @@
 var express = require('express');
-var dotenv = require('dotenv');
 var bodyParser = require('body-parser')
 var http = require('http').createServer(app);
 
@@ -8,7 +7,6 @@ var sendsms = require('./send_sms');
 
 var app = express();
 
-dotenv.config();
 
 const PORT = process.env.PORT || 3000;
 

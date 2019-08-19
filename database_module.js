@@ -1,9 +1,6 @@
 var firebase = require("firebase/app");
 require('firebase/database');
 
-const dotenv = require('dotenv');
-dotenv.config();
-
 var firebaseConfig = {
     apiKey: process.env.API_KEY,
     authDomain: process.env.AUTH_DOMAIN,
