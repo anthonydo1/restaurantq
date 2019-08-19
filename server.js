@@ -38,6 +38,7 @@ http.listen(PORT, function() {
     console.log(`Server running on port ${PORT}`);
 })
 
+
 function generateTableNumber() {
     if (currentNumber < maxNumber) {
         currentNumber++;
