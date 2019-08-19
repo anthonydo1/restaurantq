@@ -1,11 +1,11 @@
 var firebaseConfig = {
-    apiKey: process.env.API_KEY,
-    authDomain: process.env.AUTH_DOMAIN,
-    databaseURL: process.env.DATABASE_URL,
-    projectId: process.env.PROJECT_ID,
-    storageBucket: process.env.STORAGE_BUCKET,
-    messagingSenderId: process.env.MESSAGING_SENDER_ID,
-    appId: process.env.APP_ID
+    apiKey: "AIzaSyDHZXXqo5s6NPeoN7Z-IcCXCDqdrHSEhpM",
+    authDomain: "resturantqueue.firebaseapp.com",
+    databaseURL: "https://resturantqueue.firebaseio.com",
+    projectId: "resturantqueue",
+    storageBucket: "resturantqueue.appspot.com",
+    messagingSenderId: "850406156828",
+    appId: "1:850406156828:web:ed224801057c0944"
   };
 
 // Initialize Firebase
