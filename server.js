@@ -8,9 +8,7 @@ var sendsms = require('./send_sms');
 
 var app = express();
 
-dotenv.config({
-    path: './.env'
-});
+dotenv.config();
 
 const PORT = process.env.PORT || 3000;
 

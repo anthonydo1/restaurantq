@@ -2,9 +2,7 @@ var firebase = require("firebase/app");
 require('firebase/database');
 
 const dotenv = require('dotenv');
-dotenv.config({
-    path: './.env'
-});
+dotenv.config();
 
 var firebaseConfig = {
     apiKey: process.env.API_KEY,
