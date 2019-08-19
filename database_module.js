@@ -1,6 +1,6 @@
 // var firebase = require("firebase/app");
 var admin = require('firebase-admin');
-require('firebase/database');
+//require('firebase/database');
 
 // var firebaseConfig = {
 //     apiKey: process.env.API_KEY,
