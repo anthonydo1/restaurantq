@@ -17,7 +17,10 @@ firebase.initializeApp(firebaseConfig);
 
 admin.initializeApp({
     credential: admin.credential.applicationDefault(),
-    databaseURL: 'https://resturantqueue.firebaseio.com'
+    databaseURL: 'https://resturantqueue.firebaseio.com',
+    databaseAuthVariableOverride: {
+        uid: "my-admin-server"
+    }
 });
 
 var methods = {
