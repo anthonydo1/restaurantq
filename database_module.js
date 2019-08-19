@@ -1,4 +1,5 @@
 var firebase = require("firebase/app");
+var admin = require('firebase-admin');
 require('firebase/database');
 
 var firebaseConfig = {
@@ -13,6 +14,11 @@ var firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
+admin.initializeApp({
+    credential: admin.credential.applicationDefault(),
+    databaseURL: 'https://<DATABASE_NAME>.firebaseio.com'
+});
 
 var methods = {
     createQueueObject: function(phone, people, table) {
